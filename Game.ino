@@ -17,6 +17,22 @@ const int redPin = A0;
 const int greenPin = A1;
 const int bluePin = A2; 
 
+
+// here is a function for set the menu
+void setMenu() {
+  lcd.clear();
+  lcd.setCursor(3, 0);
+  lcd.print("Play");
+  lcd.setCursor(10, 0);
+  lcd.print("HighS"); 
+  lcd.setCursor(1, 1);
+  lcd.print("Settings");
+  lcd.setCursor(11, 1);
+  lcd.print("Info"); 
+  joyMovedFun();
+  lc.clearDisplay(0);
+}
+
 void setup() {
 
   pinMode(redPin, OUTPUT);
