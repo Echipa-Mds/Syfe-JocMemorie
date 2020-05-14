@@ -49,7 +49,8 @@ void loop() {
        unsigned long currentMillis = millis();
        if (currentMillis - previousMillis >= 2000) {
           previousMillis = currentMillis;
+          setMenu();
           // choose the option from menu
-         
+                 
        }   
 }
