@@ -37,6 +37,11 @@ int maxThreshold = 600;
 // function for set the joyMove
 void joyMovedFun() {joyMovedx = false; joyMovedy = false;}
 
+
+
+
+// TODO void welcomeMsg()
+
 // here is a function for set the menu
 void setMenu() {
   lcd.clear();
@@ -53,18 +58,29 @@ void setMenu() {
 }
 
 void setup() {
-
+   // put your setup code here, to run once:
+  lcd.begin(16, 2);
+  // here I will get the last highScore from eeprom memory
+  EEPROM.get(highScoreAddressLevel1, highScoreLevel1);
+  EEPROM.get(highScoreAddressLevel2, highScoreLevel2);
+  EEPROM.get(highScoreAddressLevel3, highScoreLevel3);
+  
+  lc.shutdown(0, false); // turn off power saving, enables display
+  lc.setIntensity(0, 2); // sets brightness (0~15 possible values)
+  
+  pinMode(pinSW, INPUT_PULLUP);
   pinMode(redPin, OUTPUT);
   pinMode(greenPin, OUTPUT);
   pinMode(bluePin, OUTPUT);
   pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
   pinMode (echoPin, INPUT); // Sets the echoPin as an Input
+  randomSeed(analogRead(0)); // use for random number
   Serial.begin(9600);
 }
 
 
 void loop() {
-        
+       // TODO call function 'welcomeMsg();'
        unsigned long currentMillis = millis();
        if (currentMillis - previousMillis >= 2000) {
           previousMillis = currentMillis;
