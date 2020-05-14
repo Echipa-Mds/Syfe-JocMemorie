@@ -17,6 +17,17 @@ const int redPin = A0;
 const int greenPin = A1;
 const int bluePin = A2; 
 
+
+void setMenu() {
+  lcd.clear();
+  // TODO 'Play' option
+  // TODO 'High Score' option
+  // TODO  'Settings' option
+  // TOFO 'Info' option
+  lc.clearDisplay(0);
+}
+
+
 void setup() {
 
   pinMode(redPin, OUTPUT);
