@@ -203,7 +203,8 @@ void showEndMessage() {
      
    }
 }
-//Seting the color
+
+// Seting the color
 void setColor(int color) {
   if (color == 1){
       redVal = 255;
@@ -532,6 +533,7 @@ void goToHighScore() {
     }
     setMenu();
 }
+
 // ------------------------ Info --------------------------
 void goToInfo() {
     int whichInfo = 0; 
@@ -589,7 +591,6 @@ void goToInfo() {
 
 // TODO create function chooseOption()
 
-//welcomeMsg()
 void welcomeMsg() {
   lcd.setCursor(4, 0);
   lcd.print("Welcome");  
@@ -618,7 +619,6 @@ void setup() {
 
 
 void loop() {
-       // TODO call function 'welcomeMsg();'
        welcomeMsg();
        unsigned long currentMillis = millis();
        if (currentMillis - previousMillis >= 2000) {
