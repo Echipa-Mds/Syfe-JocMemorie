@@ -5,10 +5,9 @@ Description:
 In the first 2 seconds, a Welcome message will be displayed on the lcd display, and after that a menu will be shown.
 
  * Menu(You can go through the menu using the joystick.There will be a cursor in the shape of ">" in front of several menu options: 
-
- * Play (while playing, the LCD will display the score, time, level and lives)
-* High score(displays the highest score of the player for each of the three levels)
-* Settings(where you can set the level for the game and leave feedback)
+  * Play (while playing, the LCD will display the score, time, level and lives)
+  * High score(displays the highest score of the player for each of the three levels)
+  * Settings(where you can set the level for the game and leave feedback)
 
 # The game: #
 
@@ -18,7 +17,6 @@ In the first 2 seconds, a Welcome message will be displayed on the lcd display, 
 * The number of bombs depends on the level.
 * if you hit a bomb, you will lose 5 points from your score but you will be shown the location of the bombs for 3 seconds on the display.
 * The player has 20 seconds to finish the level.
-* here is a schema(for level 1): https://imgur.com/SIkAOj7 (it's also in Matrix Game folder)
 # The levels: #
 
 There are 3 levels, and each level has 5 more bombs than the previous one.
@@ -32,7 +30,7 @@ In settings you can give feedback to the game from 1 to 5.
 
 * If you are one step away from a bomb, the LED becomes red
 * If you are two or more steps away from a bomb, the LED becomes green
-# The distance sensor:#
+# The distance sensor: #
 
 Detects your distance and turns of the red/green option if you are too close to the screen.
 The score:
@@ -44,7 +42,7 @@ you will receive a point on each box
 * If you step on a bomb, you will lose 5 points. If your score is less than 5, the score becomes 0.
 * At the end of te game, the remaining seconds will be transformed into points(each second representing one additional point)
 high score for each level will be stored in EEPROM
-# End of the game:#
+# End of the game: #
 *Video link: https://youtu.be/ZYHMe5cUwU4
 * At the end of the game, the player will be greeted with a "Congratulations" message and a "You made a new high score" if the player has gotten more points than his previous highscore. After that, the final score and number of seconds he spent will be displayed on top of the LCD.At the bottom a Play again and a Menu with the ">" cursor.
 
