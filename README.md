@@ -53,19 +53,30 @@ Used materials: 8x8 LED matrix, LCD display, Joystick, MAX7219 Driver, RGB led, 
 # User Stories: #
 ## User1: ###
 I would like to see my highest score.
+
 Notes:
+
 Highscores should be saved and and should remain even after the device is restarted.
+
 Priority:
+
 Required
+
 Status: 
+
 *Done*
+
 ## User2: ##
 I want to play multiplayer with other people and see who finishes fasterwhen we rush to the end point.
 Notes:
+
 A multiplayer mode would be require player interaction. In the current iteration competition is achieved through comparing each player scores in different gaming sessions and mesured through highscore.
 Priority:
+
 Unnecessary
+
 Status:
+
 *Canceled*
 
 ## User3: ##
@@ -143,4 +154,15 @@ Status:
 *Done*
 
 
-
+| # | Comments | Notes | Priority | Status |
+| ------------- | ------------- |
+| 1  | I would like to see my highest score.  | Highscores should be saved and and should remain even after the device is restarted. | Required | Done |
+| 2  | Content Cell  |
+| 3  | Content Cell  |
+| 4  | Content Cell  |
+| 5  | Content Cell  |
+| 6  | Content Cell  |
+| 7  | Content Cell  |
+| 8  | Content Cell  |
+| 9  | Content Cell  |
+| 10  | Content Cell  |
