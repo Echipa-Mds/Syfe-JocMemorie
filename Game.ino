@@ -49,8 +49,12 @@ int calScore = 0;
 int row = 0;
 int col = 0;
 long randNumber;
-// TODO add variabiles
 
+int openOp = 0;
+int digit = 1;
+int lastDigit = 0;
+int startingLevelValue = 1;
+int feedback = 0;
 
 
 
@@ -434,15 +438,224 @@ void startGame() {
 }
 // -----------------------------------------------------------------
 
-// TODO create function goToSettings()
+
+
+// ----------------------------- Settings --------------------------------
+void goToSettings() {
+    lcd.clear();
+    lcd.setCursor(4, 0);
+    lcd.print("Level: ");
+    lcd.setCursor(11, 0);
+    lcd.print(startingLevelValue);
+    lcd.setCursor(2, 1);
+    lcd.print("Feedback: ");
+    lcd.setCursor(12, 1);
+    lcd.print(feedback);
+    int settingMove = 1;
+    joyMovedFun();
+    // whiele the button is pressed, I can choose the value for starting level
+    for (int i = 1; i == openOption();) {
+           xValue = analogRead(pinX);
+   
+           if (xValue < minThreshold && joyMovedx == false) {
+               if (settingMove > 1) {
+                   settingMove--;
+                } else {
+                   settingMove = 2;
+                }
+                joyMovedx = true;
+            }
+
+            if (xValue > maxThreshold && joyMovedx == false) {
+                if (settingMove < 2) {
+                    settingMove++;
+                } else {
+                    settingMove = 1;
+                }   
+                joyMovedx = true;
+            } 
+      
+            if (xValue >= minThreshold && xValue <= maxThreshold) {
+                 joyMovedx = false;
+            }
+
+
+             if (settingMove == 1) {
+
+                  lcd.setCursor(1, 1);
+                  lcd.print(" ");
+                  lcd.setCursor(3, 0);
+                  lcd.print(">");
+                  yValue = analogRead(pinY);
+              
+                  if (yValue < minThreshold && joyMovedy == false) {
+                      if (startingLevelValue > 1) {
+                          startingLevelValue--;
+                      } else {
+                          startingLevelValue = 3;
+                      }
+                      joyMovedy = true;
+                  }
+            
+                  if (yValue > maxThreshold && joyMovedy == false) {
+                      if (startingLevelValue < 3) {
+                          startingLevelValue++;
+                      } else {
+                          startingLevelValue = 1;
+                      }
+                      joyMovedy = true;
+                  }
+            
+                  if (yValue >= minThreshold && yValue <= maxThreshold) {
+                      joyMovedy = false;
+                  }
+  
+                  lcd.setCursor(11, 0);
+                  lcd.print(startingLevelValue);
+                  
+               // here the player can give feedback to the game
+             } else if (settingMove == 2){
+                lcd.setCursor(3, 0);
+                lcd.print(" ");
+                lcd.setCursor(1, 1);
+                lcd.print(">");
+                yValue = analogRead(pinY);
+            
+                if (yValue < minThreshold && joyMovedy == false) {
+                    if (feedback > 1) {
+                        feedback--;
+                    } else {
+                        feedback = 5;
+                    }
+                    joyMovedy = true;
+                }
+          
+                if (yValue > maxThreshold && joyMovedy == false) {
+                    if (feedback < 5) {
+                        feedback++;
+                    } else {
+                        feedback = 1;
+                    }
+                    joyMovedy = true;
+                }
+          
+                if (yValue >= minThreshold && yValue <= maxThreshold) {
+                    joyMovedy = false;
+                }
+    
+                lcd.setCursor(12, 1);
+                lcd.print(feedback);
+        }
+    }
+    setMenu();
+}
+
 
 // TODO create function goToHighScore()
 
 // TODO create function goToInfo()
 
-// TODO create function openOption() 
 
-// TODO create function chooseOption()
+
+// in this function I change the state for button
+int openOption() {
+    swState = digitalRead(pinSW);
+    if (swState !=  lastSwState) {
+        if (swState == LOW) { 
+            openOp = !openOp;
+        }
+    }
+    lastSwState = swState;
+    return openOp;
+} 
+
+
+
+
+
+// --------------- choose the option ----------------------
+void chooseOption() {
+  openOp = 0;
+    for (int i = 1; i == 1;) {
+    xValue = analogRead(pinX);
+   
+    if (xValue < minThreshold && joyMoved == false) {
+        if (digit > 1) {
+            digit--;
+        } else {
+            digit = 4;
+        }
+        joyMoved = true;
+    }
+
+    if (xValue > maxThreshold && joyMoved == false) {
+        if (digit < 4) {
+            digit++;
+        } else {
+            digit = 1;
+        }
+        joyMoved = true;
+    } 
+  
+    if (xValue >= minThreshold && xValue <= maxThreshold) {
+        joyMoved = false;
+    }
+   
+    // if the > are in front of Start Game and button is pressed, I will start the game
+    if (digit == 1) {
+        if(digit != lastDigit) {
+            clearPosition();
+            lastDigit = digit;
+        }
+        lcd.setCursor(2, 0);
+        lcd.print(">");
+        if (openOption() == 1) {
+            startGame();
+        }  
+    }
+    
+    // if the > are in front of High Score and button is pressed, I will show the high score
+    if (digit == 2) {
+        if(digit != lastDigit) {
+            clearPosition();
+            lastDigit = digit;
+        }
+        lcd.setCursor(9, 0);
+        lcd.print(">"); 
+        if (openOption() == 1) {
+            
+            goToHighScore();
+        }
+    }
+    
+    // if the > are in front of Settings and button is pressed, I will go to settings
+    if (digit == 3){
+      if(digit != lastDigit) {
+            clearPosition();
+            lastDigit = digit;
+        }
+        lcd.setCursor(0, 1);
+        lcd.print(">");
+        if (openOption() == 1) {
+            goToSettings();
+        }   
+    }
+    // if the > are in front of Settings and button is pressed, I will go to settings
+    if (digit == 4){
+      if(digit != lastDigit) {
+            clearPosition();
+            lastDigit = digit;
+        }
+        lcd.setCursor(10, 1);
+        lcd.print(">");
+        if (openOption() == 1) {
+            goToInfo();
+        }   
+    }
+    }
+}
+//---------------------------------------------------------
+
 
 // TODO void welcomeMsg()
 
@@ -476,6 +689,7 @@ void loop() {
           previousMillis = currentMillis;
           setMenu();
           // choose the option from menu
-          // TODO call function 'chooseOption();'
+          
+         chooseOption()
        }   
 }
