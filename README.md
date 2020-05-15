@@ -44,10 +44,10 @@ you will receive a point on each box
 * At the end of te game, the remaining seconds will be transformed into points(each second representing one additional point)
 high score for each level will be stored in EEPROM
 # End of the game: #
-*Video link: https://youtu.be/ZYHMe5cUwU4
+
 * At the end of the game, the player will be greeted with a "Congratulations" message and a "You made a new high score" if the player has gotten more points than his previous highscore. After that, the final score and number of seconds he spent will be displayed on top of the LCD.At the bottom a Play again and a Menu with the ">" cursor.
 
-Used materials: 8x8 LED matrix, LCD display, Joystick, MAX7219 Driver, RGB led, arduino board, breadboards, distance sensor, potentiometer, wires, resistors, electrolytic capacitor of 10 μF, ceramic capacitor of 104 pF
+
 
 # Structura UML #
 ![f5f051e1-0580-43d2-890f-5c34ea8aa0cd](https://user-images.githubusercontent.com/62382833/82090876-0bfa4780-96ff-11ea-8691-048855d14597.jpg)
@@ -69,3 +69,5 @@ Used materials: 8x8 LED matrix, LCD display, Joystick, MAX7219 Driver, RGB led, 
 | 9  |So the game has no story? That is very bad.  | A story was added. It night creatge immersion(probably not).| Low priority | Done |
 | 10  | The game is unforgiving if you are distracted even for a second at the beginning.| We have added a second life as an error margin. | Low priority | Done |
 
+*Video link: https://youtu.be/ZYHMe5cUwU4
+Used materials: 8x8 LED matrix, LCD display, Joystick, MAX7219 Driver, RGB led, arduino board, breadboards, distance sensor, potentiometer, wires, resistors, electrolytic capacitor of 10 μF, ceramic capacitor of 104 pF
