@@ -50,7 +50,8 @@ high score for each level will be stored in EEPROM
 Used materials: 8x8 LED matrix, LCD display, Joystick, MAX7219 Driver, RGB led, arduino board, breadboards, distance sensor, potentiometer, wires, resistors, electrolytic capacitor of 10 μF, ceramic capacitor of 104 pF
 
 # Structura UML #
-![Image]](https://raw.githubusercontent.com/Echipa-Mds/Syfe-MemoryGame/master/f5f051e1-0580-43d2-890f-5c34ea8aa0cd.jpg)
+![f5f051e1-0580-43d2-890f-5c34ea8aa0cd](https://user-images.githubusercontent.com/62382833/82090876-0bfa4780-96ff-11ea-8691-048855d14597.jpg)
+
 
 # User Stories #
 
