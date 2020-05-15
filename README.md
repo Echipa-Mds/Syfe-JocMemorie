@@ -70,4 +70,5 @@ high score for each level will be stored in EEPROM
 | 10  | The game is unforgiving if you are distracted even for a second at the beginning.| We have added a second life as an error margin. | Low priority | Done |
 
 *Video link: https://youtu.be/ZYHMe5cUwU4
+
 Used materials: 8x8 LED matrix, LCD display, Joystick, MAX7219 Driver, RGB led, arduino board, breadboards, distance sensor, potentiometer, wires, resistors, electrolytic capacitor of 10 μF, ceramic capacitor of 104 pF
