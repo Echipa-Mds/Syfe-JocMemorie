@@ -51,7 +51,7 @@ Used materials: 8x8 LED matrix, LCD display, Joystick, MAX7219 Driver, RGB led, 
 
 
 
-# USER STORIES #
+# User Stories #
 
 
 | # | Comments | Notes | Priority | Status |
