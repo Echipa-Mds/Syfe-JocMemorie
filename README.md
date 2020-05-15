@@ -50,119 +50,20 @@ high score for each level will be stored in EEPROM
 Used materials: 8x8 LED matrix, LCD display, Joystick, MAX7219 Driver, RGB led, arduino board, breadboards, distance sensor, potentiometer, wires, resistors, electrolytic capacitor of 10 μF, ceramic capacitor of 104 pF
 
 
-# User Stories: #
-## User1: ###
-I would like to see my highest score.
 
-Notes:
-
-Highscores should be saved and and should remain even after the device is restarted.
-
-Priority:
-
-Required
-
-Status: 
-
-*Done*
-
-## User2: ##
-I want to play multiplayer with other people and see who finishes fasterwhen we rush to the end point.
-Notes:
-
-A multiplayer mode would be require player interaction. In the current iteration competition is achieved through comparing each player scores in different gaming sessions and mesured through highscore.
-Priority:
-
-Unnecessary
-
-Status:
-
-*Canceled*
-
-## User3: ##
-I have played with the game for quite a bit and the proximity light is too bright. Can it be toned down ?
-
-Notes:
-On the initial game, lenght expose to the bright light led to reduced player satisfaction.
-We have installed a distance sensor that turns on the led only when the player is at a reasonable distance from the game.
-Priority:
-Optional
-Status:
-*Done*
-
-
-
-## User4(lead developer Bogdan): ##
-The circuitry is exposed and can be easily messed up.
-Notes:
-We have built a casing that houses the hardware.
-Priority:
-Highly recommended(but not required)
-Status:
-*Done*
-## User5: ##
-The game is too easy and boring.
-Notes:
-We have added 2  more levels each with increased number of bombs.
-Priority:
-Recommended
-Status:
-*Done*
-## User6: ##
-The game runs slowly and has moments when it stops running.
-Notes:
-We have refactored the code to remove freeze and make it run smoothly.
-Priority:
-Highly recommended
-Status:
-*Done*
-## User7: ##
-I would like to save and load the game.
-Notes:
-The game has a low duration and a save&load feature would be impractical.
-Priority:
-Very low priority
-Status:
-Canceled
-## User8: ##
-Does this game have sound ?
-Notes:
-Sound could create a pleasant environment for playing the game.
-Priority:
-Recommended
-Status:
-* Canceled due to time retraints *
-
-
-## User9: ##
-So the game has no story? That is very bad.
-Notes:
-A story was added. It might creatge immersion(probably not).
-Priority:
-Low priority
-Status:
-*Done*
-
-
-## User10: ##
-The game is unforgiving if you are distracted even for a second at the beginning.
-Notes:
-We have added a second life as an error margin.
-Prority:
-Low priority
-Status:
-*Done*
+# USER STORIES #
 
 
 | # | Comments | Notes | Priority | Status |
-| ------------- | ------------- |
+| ------------- | ------------- | ------------- |------------- | ------------- |
 | 1  | I would like to see my highest score.  | Highscores should be saved and and should remain even after the device is restarted. | Required | Done |
-| 2  | Content Cell  |
-| 3  | Content Cell  |
-| 4  | Content Cell  |
-| 5  | Content Cell  |
-| 6  | Content Cell  |
-| 7  | Content Cell  |
-| 8  | Content Cell  |
-| 9  | Content Cell  |
-| 10  | Content Cell  |
+| 2  | I want to play multiplayer with other people and see who finishes fasterwhen we rush to the end point.| A multiplayer mode would be require player interaction. In the current iteration competition is achieved through comparing each player scores in different gaming sessions and mesured through highscore.| Unnecessary | Cancelled |
+| 3  | I have played with the game for quite a bit and the proximity light is too bright. Can it be toned down ?  | On the initial game, lenght expose to the bright light led to reduced player satisfaction.We have installed a distance sensor that turns on the led only when the player is at a reasonable distance from the game.| Optional | Done |
+| 4  | The circuitry is exposed and can be easily messed up.| We have built a casing that houses the hardware. | Highly recommended(but not required) | Done |
+| 5  | The game is too easy and boring.. | We have added 2  more levels each with increased number of bombs. | Recommended | Done |
+| 6  | The game runs slowly and has moments when it stops running.  | The game has a low duration and a save&load feature would be impractical. | Highly recommended | Done |
+| 7  | I would like to save and load the game.| The game has a low duration and a save&load feature would be impractical. | Very Low Priority | Cancelled |
+| 8  | Does this game have sound ?  | Highscores should be saved and and should remain even after the device is restarted. | Recommended | Canceled due to time retraints |
+| 9  |So the game has no story? That is very bad.  | A story was added. It night creatge immersion(probably not).| Low priority | Done |
+| 10  | The game is unforgiving if you are distracted even for a second at the beginning.| We have added a second life as an error margin. | Low priority | Done |
+
