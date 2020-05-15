@@ -4,12 +4,12 @@ Description:
 
 In the first 2 seconds, a Welcome message will be displayed on the lcd display, and after that a menu will be shown.
 
--Menu(You can go through the menu using the joystick.There will be a cursor in the shape of ">" in front of several menu options: 
+ * Menu(You can go through the menu using the joystick.There will be a cursor in the shape of ">" in front of several menu options: 
 
-Play (while playing, the LCD will display the score, time, level and lives)
-High score(displays the highest score of the player for each of the three levels)
-Settings(where you can set the level for the game and leave feedback)
-Info(creator name, game name, github link, @Unibuc Robotics)
+ * Play (while playing, the LCD will display the score, time, level and lives)
+* High score(displays the highest score of the player for each of the three levels)
+* Settings(where you can set the level for the game and leave feedback)
+* Info(creator name, game name, github link, @Unibuc Robotics)
 The game:
 
 before the game, a map with bombs will be randomly chosen
