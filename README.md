@@ -26,10 +26,9 @@ There are 3 levels, and each level has 5 more bombs than the previous one.
 * level 2: 15 bombs
 * level 3: 20 bombs
 You can set the level from the settings.
-The feedback:
-
-# In settings you can give feedback to the game from 1 to 5#
-The RGB led:
+# The feedback: #
+In settings you can give feedback to the game from 1 to 5.
+# The RGB led: #
 
 * If you are one step away from a bomb, the LED becomes red
 * If you are two or more steps away from a bomb, the LED becomes green
