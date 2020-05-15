@@ -6,8 +6,8 @@ In the first 2 seconds, a Welcome message will be displayed on the lcd display, 
 
  * Menu(You can go through the menu using the joystick.There will be a cursor in the shape of ">" in front of several menu options: 
    * Play (while playing, the LCD will display the score, time, level and lives)
-   * High score(displays the highest score of the player for each of the three levels)
-   * Settings(where you can set the level for the game and leave feedback)
+   * High score (displays the highest score of the player for each of the three levels)
+   * Settings (where you can set the level for the game and leave feedback)
 
 # The game: #
 
@@ -26,7 +26,7 @@ There are 3 levels, and each level has 5 more bombs than the previous one.
 
 You can set the level from the settings.
 # The feedback: #
-In settings you can give feedback to the game from 1 to 5.
+In the settings menu you can give a feedback to the game from 1 to 5.
 # The RGB led: #
 
 * If you are one step away from a bomb, the LED becomes red
