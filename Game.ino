@@ -50,12 +50,18 @@ int row = 0;
 int col = 0;
 long randNumber;
 
+
+
+int redVal;
+int greenVal; 
+int blueVal;
+
+
 int openOp = 0;
 int digit = 1;
 int lastDigit = 0;
 int startingLevelValue = 1;
 int feedback = 0;
-
 
 
 // variable for time
@@ -208,9 +214,85 @@ void showEndMessage() {
    }
 }
 
-// TODO create function setColor(int color)
+// Seting the color
+void setColor(int color) {
+  if (color == 1){
+      redVal = 255;
+      greenVal = 0;
+      blueVal = 0;
+      
+      analogWrite(redPin, redVal); 
+      analogWrite(greenPin, greenVal); 
+      analogWrite(bluePin, blueVal);   
+  } else if (color == 2) {
+      redVal = 0;
+      greenVal = 255;
+      blueVal = 0;
+      
+      analogWrite(redPin, redVal); 
+      analogWrite(greenPin, greenVal); 
+      analogWrite(bluePin, blueVal); 
+    } 
+}
 
-// TODO create function checkBombs(int row, int col)
+// Checking if one step away from a bomb.
+void checkBombs(int row, int col) {
+      if (row == 0 && col == 0) {
+             if (currentMap[0][1] == 1 || currentMap[1][1] == 1 || currentMap[1][0] == 1) {
+                 setColor(1);
+             } else {
+                 setColor(2);
+             }
+      } else if (row == 0 && col == 7) {
+            if (currentMap[0][6] == 1 || currentMap[1][6] == 1 || currentMap[1][7] == 1) {
+                setColor(1);
+            } else {
+                setColor(2);
+            }
+       } else if (row == 7 && col == 7) {
+            if (currentMap[7][6] == 1 || currentMap[6][6] == 1 || currentMap[6][7] == 1) {
+                setColor(1);
+            } else {
+                setColor(2);
+              }
+       } else if (row == 7 && col == 0) {
+            if (currentMap[6][0] == 1 || currentMap[6][1] == 1 || currentMap[7][1] == 1) {
+                setColor(1);
+            } else {
+                setColor(2);
+              }
+       } else if (row == 0) {
+            if (currentMap[row][col-1] == 1 || currentMap[row][col+1] == 1 || currentMap[row + 1][col] == 1) {
+                setColor(1);
+            } else {
+                setColor(2);
+              }
+       } else if (row == 7) {
+            if (currentMap[row][col-1] == 1 || currentMap[row][col+1] == 1 || currentMap[row - 1][col] == 1) {
+                setColor(1);
+            } else {
+                setColor(2);
+            }
+       } else if (col == 0) {
+            if (currentMap[row - 1][col] == 1 || currentMap[row + 1][col] == 1 || currentMap[row][col + 1] == 1) {
+                setColor(1);
+            } else {
+                setColor(2);
+            }
+       } else if (col == 7) {
+            if (currentMap[row - 1][col] == 1 || currentMap[row + 1][col] == 1 || currentMap[row][col - 1] == 1) {
+                setColor(1);
+            } else {
+                setColor(2);
+            }
+       } else {
+            if (currentMap[row - 1][col] == 1 || currentMap[row + 1][col] == 1 || currentMap[row][col + 1] == 1 || currentMap[row][col - 1]) {
+                setColor(1);
+            } else {
+                setColor(2);
+            }
+       }
+}
 
 // this is a function who set the variables for game and set the
 // display for game, the key words
@@ -551,9 +633,80 @@ void goToSettings() {
 }
 
 
-// TODO create function goToHighScore()
+// ------------------------ High Score --------------------------
+void goToHighScore() {
+    lcd.clear();
+    for (int i = 1; i == openOption();) {
+        lcd.setCursor(1, 0);
+        lcd.print("HighS per level");
+        lcd.setCursor(0, 1);
+        lcd.print("1:");
+        lcd.setCursor(2, 1);
+        lcd.print(highScoreLevel1);
+        lcd.setCursor(6, 1);
+        lcd.print("2:");
+        lcd.setCursor(8, 1);
+        lcd.print(highScoreLevel2);
+        lcd.setCursor(12, 1);
+        lcd.print("3:");
+        lcd.setCursor(14, 1);
+        lcd.print(highScoreLevel3);
+    }
+    setMenu();
+}
 
-// TODO create function goToInfo()
+// ------------------------ Info --------------------------
+void goToInfo() {
+    int whichInfo = 0; 
+    lcd.clear();
+    lcd.setCursor(2, 0);
+    lcd.print("Creator Name");     
+    lcd.setCursor(0, 1);
+    lcd.print("Iordache Bogdan");
+    previousMillis = millis();
+    
+    for (int i = 1; i == openOption();) {
+         unsigned long currentMillis = millis();
+         // every 3 second, I display a message
+         if (currentMillis - previousMillis >= 3000) {
+             previousMillis = currentMillis;
+             whichInfo++;
+             if (whichInfo == 1) {
+                lcd.clear();
+                lcd.setCursor(3, 0);
+                lcd.print("Game name:");     
+                lcd.setCursor(6, 1);
+                lcd.print("Syfe");
+             }
+             if (whichInfo == 2) {
+                lcd.clear();                                                 
+                lcd.setCursor(1, 0);
+                lcd.print("GitHub: github");     
+                lcd.setCursor(1, 1);
+                lcd.print(".com/BogdanICH");
+             }
+             if (whichInfo == 3) {
+                lcd.clear();
+                lcd.setCursor(3, 0);
+                lcd.print("Powered by");     
+                lcd.setCursor(1, 1);
+                lcd.print("@UnibucRobotics");
+             }
+             if (whichInfo == 4) {
+                lcd.clear();
+                lcd.setCursor(2, 0);
+                lcd.print("Creator Name");     
+                lcd.setCursor(0, 1);
+                lcd.print("Iordache Bogdan");
+             }
+                
+             if (whichInfo == 4) {
+                 whichInfo = 0;
+             }
+                  
+         }
+    }
+
 
 
 
@@ -657,8 +810,10 @@ void chooseOption() {
 //---------------------------------------------------------
 
 
-// TODO void welcomeMsg()
-
+void welcomeMsg() {
+  lcd.setCursor(4, 0);
+  lcd.print("Welcome");  
+}
 
 void setup() {
    // put your setup code here, to run once:
@@ -683,7 +838,7 @@ void setup() {
 
 
 void loop() {
-       // TODO call function 'welcomeMsg();'
+       welcomeMsg();
        unsigned long currentMillis = millis();
        if (currentMillis - previousMillis >= 2000) {
           previousMillis = currentMillis;

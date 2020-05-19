@@ -6,8 +6,8 @@ In the first 2 seconds, a Welcome message will be displayed on the lcd display, 
 
  * Menu(You can go through the menu using the joystick.There will be a cursor in the shape of ">" in front of several menu options: 
    * Play (while playing, the LCD will display the score, time, level and lives)
-   * High score(displays the highest score of the player for each of the three levels)
-   * Settings(where you can set the level for the game and leave feedback)
+   * High score (displays the highest score of the player for each of the three levels)
+   * Settings (where you can set the level for the game and leave feedback)
 
 # The game: #
 
@@ -26,7 +26,7 @@ There are 3 levels, and each level has 5 more bombs than the previous one.
 
 You can set the level from the settings.
 # The feedback: #
-In settings you can give feedback to the game from 1 to 5.
+In the settings menu you can give a feedback to the game from 1 to 5.
 # The RGB led: #
 
 * If you are one step away from a bomb, the LED becomes red
@@ -44,7 +44,31 @@ you will receive a point on each box
 * At the end of te game, the remaining seconds will be transformed into points(each second representing one additional point)
 high score for each level will be stored in EEPROM
 # End of the game: #
-*Video link: https://youtu.be/ZYHMe5cUwU4
+
 * At the end of the game, the player will be greeted with a "Congratulations" message and a "You made a new high score" if the player has gotten more points than his previous highscore. After that, the final score and number of seconds he spent will be displayed on top of the LCD.At the bottom a Play again and a Menu with the ">" cursor.
+
+
+
+# Structura UML #
+![f5f051e1-0580-43d2-890f-5c34ea8aa0cd](https://user-images.githubusercontent.com/62382833/82090876-0bfa4780-96ff-11ea-8691-048855d14597.jpg)
+
+
+# User Stories #
+
+
+| # | Comments | Notes | Priority | Status |
+| ------------- | ------------- | ------------- |------------- | ------------- |
+| 1  | I would like to see my highest score.  | Highscores should be saved and and should remain even after the device is restarted. | Required | Done |
+| 2  | I want to play multiplayer with other people and see who finishes fasterwhen we rush to the end point.| A multiplayer mode would be require player interaction. In the current iteration competition is achieved through comparing each player scores in different gaming sessions and mesured through highscore.| Unnecessary | Cancelled |
+| 3  | I have played with the game for quite a bit and the proximity light is too bright. Can it be toned down ?  | On the initial game, lenght expose to the bright light led to reduced player satisfaction.We have installed a distance sensor that turns on the led only when the player is at a reasonable distance from the game.| Optional | Done |
+| 4  | The circuitry is exposed and can be easily messed up.| We have built a casing that houses the hardware. | Highly recommended(but not required) | Done |
+| 5  | The game is too easy and boring.. | We have added 2  more levels each with increased number of bombs. | Recommended | Done |
+| 6  | The game runs slowly and has moments when it stops running.  | The game has a low duration and a save&load feature would be impractical. | Highly recommended | Done |
+| 7  | I would like to save and load the game.| The game has a low duration and a save&load feature would be impractical. | Very Low Priority | Cancelled |
+| 8  | Does this game have sound ?  | Sound could create a pleasant environment for playing the game. | Recommended | Canceled due to time retraints |
+| 9  |So the game has no story? That is very bad.  | A story was added. It night creatge immersion(probably not).| Low priority | Done |
+| 10  | The game is unforgiving if you are distracted even for a second at the beginning.| We have added a second life as an error margin. | Low priority | Done |
+
+*Video link: https://youtu.be/ZYHMe5cUwU4
 
 Used materials: 8x8 LED matrix, LCD display, Joystick, MAX7219 Driver, RGB led, arduino board, breadboards, distance sensor, potentiometer, wires, resistors, electrolytic capacitor of 10 μF, ceramic capacitor of 104 pF
