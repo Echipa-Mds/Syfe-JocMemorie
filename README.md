@@ -65,7 +65,7 @@ high score for each level will be stored in EEPROM
 | 5  | The game is too easy and boring.. | We have added 2  more levels each with increased number of bombs. | Recommended | Done |
 | 6  | The game runs slowly and has moments when it stops running.  | The game has a low duration and a save&load feature would be impractical. | Highly recommended | Done |
 | 7  | I would like to save and load the game.| The game has a low duration and a save&load feature would be impractical. | Very Low Priority | Cancelled |
-| 8  | Does this game have sound ?  | Highscores should be saved and and should remain even after the device is restarted. | Recommended | Canceled due to time retraints |
+| 8  | Does this game have sound ?  | Sound could create a pleasant environment for playing the game. | Recommended | Canceled due to time retraints |
 | 9  |So the game has no story? That is very bad.  | A story was added. It night creatge immersion(probably not).| Low priority | Done |
 | 10  | The game is unforgiving if you are distracted even for a second at the beginning.| We have added a second life as an error margin. | Low priority | Done |
 
