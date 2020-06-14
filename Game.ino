@@ -43,25 +43,21 @@ int highScoreLevel3 = 0;
 int itsHighScore = 0;
 int startingLevelValue = 1;
 int level = 0;
-int lives = 0;
-int remainingTime = 0;
 int calScore = 0;
-int row = 0;
-int col = 0;
-long randNumber;
-
-
-
-int redVal;
-int greenVal; 
-int blueVal;
-
-
-int openOp = 0;
 int digit = 1;
 int lastDigit = 0;
-int startingLevelValue = 1;
+int openOp = 0;
 int feedback = 0;
+int lives = 0;
+int remainingTime = 0;
+int row = 0;
+int col = 0;
+int redVal; 
+int greenVal; 
+int blueVal;
+long duration;
+int distance;
+long randNumber;
 
 
 // variable for time
@@ -75,6 +71,173 @@ const int d5 = 4;
 const int d6 = 3;
 const int d7 = 2;
 LiquidCrystal lcd(RS, enable, d4, d5, d6, d7);
+
+// initialize maps for each level
+bool mapLevel1[5][8][8] = {
+  
+{{0, 0, 0, 0, 0, 0, 0, 1},
+{0, 0, 0, 1, 0, 0, 0, 0},
+{0, 1, 0, 0, 0, 0, 1, 0},
+{0, 0, 0, 0, 1, 0, 0, 0},
+{0, 1, 0, 0, 0, 0, 0, 0},
+{0, 0, 1, 0, 0, 1, 0, 0},
+{0, 0, 0, 0, 0, 0, 0, 0},
+{1, 0, 0, 1, 0, 0, 0, 0}},
+
+{{0, 0, 0, 1, 0, 0, 0, 0},
+{0, 1, 0, 0, 0, 0, 1, 0},
+{0, 0, 0, 1, 0, 0, 0, 0},
+{0, 0, 0, 0, 1, 0, 0, 0},
+{0, 0, 0, 0, 0, 1, 0, 1},
+{0, 0, 1, 0, 0, 0, 0, 0},
+{0, 1, 0, 0, 0, 0, 0, 0},
+{1, 0, 0, 0, 0, 0, 0, 0}},
+
+{{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 1, 0, 0, 0, 0, 0, 1},
+{0, 0, 0, 0, 1, 0, 0, 0},
+{0, 1, 0, 0, 0, 1, 0, 0},
+{1, 0, 0, 0, 0, 0, 0, 0},
+{0, 1, 0, 1, 0, 0, 1, 0},
+{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 1, 0, 0, 0, 0, 0, 0}},
+
+{{0, 0, 0, 1, 0, 0, 1, 0},
+{0, 1, 0, 0, 0, 0, 0, 0},
+{0, 0, 0, 1, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 0, 1, 0},
+{0, 0, 0, 0, 1, 0, 0, 0},
+{0, 1, 0, 0, 0, 0, 0, 0},
+{0, 0, 0, 1, 0, 0, 1, 0},
+{0, 0, 1, 0, 0, 0, 0, 0}},
+
+{{0, 0, 0, 1, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 1, 0, 0},
+{0, 0, 1, 0, 0, 0, 0, 0},
+{1, 0, 0, 1, 0, 0, 1, 1},
+{0, 0, 0, 0, 1, 0, 0, 0},
+{0, 0, 0, 0, 0, 0, 1, 0},
+{0, 0, 1, 0, 0, 0, 0, 0}},
+
+};
+
+bool mapLevel2[5][8][8] = {
+  
+{{0, 1, 0, 0, 0, 0, 0, 1},
+{0, 1, 0, 1, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 1, 0, 0},
+{0, 1, 0, 1, 0, 0, 0, 0},
+{0, 0, 0, 1, 0, 0, 0, 1},
+{0, 1, 0, 0, 0, 1, 0, 0},
+{1, 0, 0, 1, 0, 1, 1, 0},
+{0, 0, 0, 0, 0, 0, 0, 0}},
+
+{{0, 1, 0, 0, 0, 0, 0, 0},
+{0, 0, 1, 0, 0, 1, 0, 1},
+{0, 0, 0, 1, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 1, 0, 0},
+{0, 0, 1, 0, 1, 0, 0, 1},
+{1, 0, 0, 1, 0, 1, 0, 0},
+{0, 0, 1, 0, 0, 0, 1, 0},
+{0, 0, 0, 0, 1, 0, 0, 0}},
+
+{{0, 0, 1, 0, 1, 0, 1, 0},
+{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, 1, 0, 0, 0, 1, 1},
+{1, 0, 0, 0, 1, 0, 0, 0},
+{0, 1, 0, 0, 1, 0, 1, 0},
+{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, 1, 0, 0, 0, 0, 0},
+{1, 0, 0, 0, 1, 0, 1, 0}},
+
+{{0, 0, 0, 0, 1, 0, 0, 1},
+{0, 0, 1, 0, 0, 0, 0, 0},
+{0, 0, 0, 0, 1, 1, 1, 1},
+{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, 1, 0, 0, 0, 0, 0},
+{1, 1, 1, 0, 0, 1, 0, 1},
+{0, 0, 0, 0, 0, 1, 0, 0},
+{0, 0, 1, 0, 0, 0, 0, 0}},
+
+{{0, 0, 1, 0, 0, 1, 0, 0},
+{0, 0, 0, 0, 1, 0, 0, 0},
+{1, 0, 0, 1, 0, 0, 0, 1},
+{0, 0, 1, 0, 0, 0, 0, 0},
+{0, 1, 0, 0, 1, 1, 0, 0},
+{0, 0, 1, 0, 0, 0, 0, 0},
+{0, 0, 0, 1, 0, 0, 0, 1},
+{0, 1, 0, 0, 1, 0, 0, 0}},
+
+};
+bool mapLevel3[5][8][8] = {
+    
+{{0, 0, 1, 0, 1, 0, 0, 0},
+{0, 0, 0, 0, 0, 0, 1, 1},
+{0, 0, 1, 0, 1, 0, 0, 0},
+{1, 0, 0, 0, 0, 1, 0, 1},
+{0, 1, 0, 1, 0, 1, 0, 0},
+{0, 1, 0, 1, 0, 1, 1, 0},
+{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 1, 1, 0, 1, 0, 1, 0}},
+
+{{0, 1, 0, 0, 0, 0, 0, 0},
+{0, 1, 0, 1, 0, 0, 0, 1},
+{0, 1, 0, 0, 1, 0, 0, 0},
+{0, 1, 1, 0, 0, 1, 0, 1},
+{0, 1, 0, 0, 1, 0, 0, 0},
+{0, 1, 0, 1, 0, 1, 0, 1},
+{0, 0, 0, 0, 0, 0, 0, 1},
+{1, 0, 0, 1, 0, 1, 0, 0}},
+
+{{0, 0, 1, 1, 1, 1, 0, 0},
+{0, 0, 0, 0, 0, 0, 0, 1},
+{0, 0, 1, 0, 1, 0, 0, 0},
+{0, 0, 0, 1, 0, 0, 0, 1},
+{0, 0, 1, 1, 0, 1, 1, 0},
+{0, 0, 0, 0, 0, 0, 0, 0},
+{1, 0, 1, 0, 1, 0, 1, 0},
+{1, 0, 1, 0, 1, 0, 0, 0}},
+
+{{0, 1, 0, 0, 0, 1, 0, 0},
+{0, 1, 0, 1, 0, 0, 0, 1},
+{0, 0, 1, 1, 0, 1, 0, 0},
+{0, 0, 0, 1, 0, 0, 0, 1},
+{1, 1, 0, 0, 0, 1, 0, 1},
+{0, 0, 0, 1, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 1, 1, 0},
+{1, 1, 0, 1, 0, 0, 0, 0}},
+
+{{0, 0, 0, 1, 0, 0, 0, 1},
+{0, 1, 0, 0, 0, 0, 1, 0},
+{0, 0, 1, 1, 0, 0, 0, 0},
+{0, 1, 0, 1, 1, 0, 1, 0},
+{0, 0, 0, 0, 1, 0, 0, 0},
+{0, 1, 0, 0, 1, 1, 0, 0},
+{1, 1, 0, 0, 0, 0, 1, 0},
+{1, 0, 0, 1, 1, 0, 0, 0}},
+};
+
+bool currentMap[8][8] = {
+{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 0, 0, 0}
+};
+bool pointsMap[8][8] = {
+{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 0, 0, 0}
+};
 
 // function for set the joyMove
 void joyMovedFun() {joyMovedx = false; joyMovedy = false;}
@@ -103,7 +266,8 @@ void clearPosition() {
   lcd.setCursor(10, 1);
   lcd.print(" ");   
   lcd.setCursor(0, 1);
-  lcd.print(" ");     
+  lcd.print(" "); 
+        
 }
 
 // this is a function who show on lcd display end message when the game is done
@@ -213,8 +377,7 @@ void showEndMessage() {
      
    }
 }
-
-// Seting the color
+// here I set the color of the rgb led
 void setColor(int color) {
   if (color == 1){
       redVal = 255;
@@ -234,8 +397,7 @@ void setColor(int color) {
       analogWrite(bluePin, blueVal); 
     } 
 }
-
-// Checking if one step away from a bomb.
+// I check if I am one step to a bomb, and if I am, rgb led will be red, also, green
 void checkBombs(int row, int col) {
       if (row == 0 && col == 0) {
              if (currentMap[0][1] == 1 || currentMap[1][1] == 1 || currentMap[1][0] == 1) {
@@ -518,9 +680,6 @@ void startGame() {
  
   setMenu();
 }
-// -----------------------------------------------------------------
-
-
 
 // ----------------------------- Settings --------------------------------
 void goToSettings() {
@@ -632,7 +791,6 @@ void goToSettings() {
     setMenu();
 }
 
-
 // ------------------------ High Score --------------------------
 void goToHighScore() {
     lcd.clear();
@@ -654,7 +812,7 @@ void goToHighScore() {
     }
     setMenu();
 }
-
+// --------------------------------------------------------------
 // ------------------------ Info --------------------------
 void goToInfo() {
     int whichInfo = 0; 
@@ -707,8 +865,10 @@ void goToInfo() {
          }
     }
 
-
-
+  // ---------------
+    setMenu();
+}
+// --------------------------------------------------------------
 
 // in this function I change the state for button
 int openOption() {
@@ -721,10 +881,6 @@ int openOption() {
     lastSwState = swState;
     return openOp;
 } 
-
-
-
-
 
 // --------------- choose the option ----------------------
 void chooseOption() {
@@ -808,15 +964,12 @@ void chooseOption() {
     }
 }
 //---------------------------------------------------------
-
-
 void welcomeMsg() {
   lcd.setCursor(4, 0);
   lcd.print("Welcome");  
 }
-
 void setup() {
-   // put your setup code here, to run once:
+  // put your setup code here, to run once:
   lcd.begin(16, 2);
   // here I will get the last highScore from eeprom memory
   EEPROM.get(highScoreAddressLevel1, highScoreLevel1);
@@ -825,7 +978,6 @@ void setup() {
   
   lc.shutdown(0, false); // turn off power saving, enables display
   lc.setIntensity(0, 2); // sets brightness (0~15 possible values)
-  
   pinMode(pinSW, INPUT_PULLUP);
   pinMode(redPin, OUTPUT);
   pinMode(greenPin, OUTPUT);
@@ -836,15 +988,15 @@ void setup() {
   Serial.begin(9600);
 }
 
-
 void loop() {
+       // this is an welcome message
        welcomeMsg();
        unsigned long currentMillis = millis();
        if (currentMillis - previousMillis >= 2000) {
           previousMillis = currentMillis;
+          // set the menu
           setMenu();
           // choose the option from menu
-          
-         chooseOption()
+          chooseOption();
        }   
 }
