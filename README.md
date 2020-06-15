@@ -80,7 +80,7 @@ Used materials: 8x8 LED matrix, LCD display, Joystick, MAX7219 Driver, RGB led, 
 
 
 
-![image-20200615225301711](/home/samer/.config/Typora/typora-user-images/image-20200615225301711.png)
+![Design](https://user-images.githubusercontent.com/62382833/84704184-1ad45400-af62-11ea-8597-5a7863ee5c4a.png)
 
 ​	Model - The software component which represents the conceptual assets the application offers, such as a database. For this project, we used EEPROM, a portion inside the arduino board that saves data even when it is turned off.
 
