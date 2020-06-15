@@ -155,7 +155,7 @@ Used materials: 8x8 LED matrix, LCD display, Joystick, MAX7219 Driver, RGB led, 
 
 
 
-​	The third test I did was for the RGB LED near the matrix.
+​	The third test we did was for the RGB LED near the matrix.
 
 #### The test consists of checking if:
 
