@@ -93,7 +93,7 @@ Used materials: 8x8 LED matrix, LCD display, Joystick, MAX7219 Driver, RGB led, 
 
 
 
-## Testare LCD display
+## LCD Display Testing
 
 ​	The first test we took care of is checking the LCD screen. The reason it represented a priority is because without it, all the other functions become unusable.
 ​	
@@ -139,13 +139,13 @@ Used materials: 8x8 LED matrix, LCD display, Joystick, MAX7219 Driver, RGB led, 
 
 ####	Following the tests we found :
 
- * Sometimes a part of the pixels would not work, making the game impossible to play. The problem was due to the connection of the matrix with the breadboard and the resistors.
+ * Sometimes some of the pixels would not work, making the game impossible to play. The problem was due to the connection of the matrix with the breadboard and the resistors.
 
-  > Solution: We replaced the affected wires and we reconnected both the matrix on the breadboard and the resistors.
+    > Solution: We replaced the affected wires and we reconnected both the matrix on the breadboard and the resistors.
 
  * The pixels did not always have the same intensity, the problem being caused by the connection of the matrix with the breadboard and by the connection of the resistors with the breadboard
 
-  > Solution: We disconnected both components and re-connected them better
+    > Solution: We disconnected both components and re-connected them better
 
  * As long as all the pixels worked on the matrix, the bombs were displayed correctly.
 
@@ -161,7 +161,7 @@ Used materials: 8x8 LED matrix, LCD display, Joystick, MAX7219 Driver, RGB led, 
 
    * the LED works
    * the light intensity is appropriate
-   * the two colors I use go (green & red)
+   * the two colors we use work (green & red)
 
 #### Following the test we found:
 
@@ -179,7 +179,7 @@ Used materials: 8x8 LED matrix, LCD display, Joystick, MAX7219 Driver, RGB led, 
 
 
 
-​	We performed the fourth test to decide if the distance sensor works properly, ie if it approximates well the distance from it to the first object in front of it.
+​	We performed the fourth test to decide if the distance sensor works properly, ie if it correctly approximates the distance from it to the first object in front of it.
 
 #### 	Following the tests performed, we found that the sensor works properly.
 
