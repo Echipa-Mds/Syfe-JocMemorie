@@ -1,7 +1,6 @@
 # Syfe-MemoryGame
 Name of the project: Syfe
 Description:
-
 In the first 2 seconds, a Welcome message will be displayed on the lcd display, and after that a menu will be shown.
 
  * Menu(You can go through the menu using the joystick.There will be a cursor in the shape of ">" in front of several menu options: 
@@ -142,11 +141,11 @@ Used materials: 8x8 LED matrix, LCD display, Joystick, MAX7219 Driver, RGB led, 
 
  * Sometimes a part of the pixels would not work, making the game impossible to play. The problem was due to the connection of the matrix with the breadboard and the resistors.
 
-> Solution: We replaced the affected wires and we reconnected both the matrix on the breadboard and the resistors.
+  > Solution: We replaced the affected wires and we reconnected both the matrix on the breadboard and the resistors.
 
  * The pixels did not always have the same intensity, the problem being caused by the connection of the matrix with the breadboard and by the connection of the resistors with the breadboard
 
-> Solution: We disconnected both components and re-connected them better
+  > Solution: We disconnected both components and re-connected them better
 
  * As long as all the pixels worked on the matrix, the bombs were displayed correctly.
 
