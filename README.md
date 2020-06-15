@@ -72,3 +72,144 @@ high score for each level will be stored in EEPROM
 *Video link: https://youtu.be/ZYHMe5cUwU4
 
 Used materials: 8x8 LED matrix, LCD display, Joystick, MAX7219 Driver, RGB led, arduino board, breadboards, distance sensor, potentiometer, wires, resistors, electrolytic capacitor of 10 μF, ceramic capacitor of 104 pF
+
+
+
+
+# Design & Arhitecture
+
+
+
+![image-20200615225301711](/home/samer/.config/Typora/typora-user-images/image-20200615225301711.png)
+
+​	Model - The software component which represents the conceptual assets the application offers, such as a database. For this project, we used EEPROM, a portion inside the arduino board that saves data even when it is turned off.
+
+● View - Creates the interface the user sees, with respect to the actions sent by the controller or directly interrogating the models. The final information will be displayed on the LCD display as text.
+
+● Controller - Logical component of the application, that intercepts the user's requests, interrogates the data base using the model, constructs an answer using the view and then returns to the client as a text on the LCD Display. The joystick will be the controller.
+
+
+
+#                                   Automatic Testing
+
+
+
+## Testare LCD display
+
+​	The first test we took care of is checking the LCD screen. The reason it represented a priority is because without it, all the other functions become unusable.
+​	
+
+#### 	The test consists of checking if:	  
+
+* The LCD display lights up and displays the text correctly on the screen (brightness, contrast) 
+
+* The LCD display displays the menu on the screen
+
+* The LCD display responds correctly when a joystick is used for navigation between menu commands
+
+  
+
+ #### Following the test we found:    
+
+* The screen lit up each time, but the brightness and contrast weren't always adequate, causing the letters to become unreadable sometimes. The problem was caused by the cable connection on the breadboard (the board that connects the LCD display and the arduino uno board )
+
+  > Solution: The wires were changed with higher quality ones.
+
+* The menu was displayed correctly on the screen each time (after changing the affected wires)    
+
+* Most of the time, the joystick behaves correctly, but there were times when the joystick was too sensitive and would jump from an option to another.
+
+  > Solution: we modified the movement perimeter of the joystick so that it is more precise.
+
+
+
+## Matrix testing
+
+​		The second test we did was for the 8x8 matrix on which the game is displayed 
+
+#### 	The test consists of checking if :
+
+* all pixels work
+
+* the pixels have the corresponding brightness
+
+* the bombs are displayed correctly on the matrix
+
+  
+
+
+####	Following the tests we found :
+
+ * Sometimes a part of the pixels would not work, making the game impossible to play. The problem was due to the connection of the matrix with the breadboard and the resistors.
+
+> Solution: We replaced the affected wires and we reconnected both the matrix on the breadboard and the resistors.
+
+ * The pixels did not always have the same intensity, the problem being caused by the connection of the matrix with the breadboard and by the connection of the resistors with the breadboard
+
+> Solution: We disconnected both components and re-connected them better
+
+ * As long as all the pixels worked on the matrix, the bombs were displayed correctly.
+
+
+
+## Testing the RGB LED
+
+
+
+​	The third test I did was for the RGB LED near the matrix.
+
+#### The test consists of checking if:
+
+   * the LED works
+   * the light intensity is appropriate
+   * the two colors I use go (green & red)
+
+#### Following the test we found:
+
+   * The LED worked every time (no connection problems with the breadboard)
+
+   * The two colors have always worked
+
+   * In the first phase the light intensity was too high and you could not look at the LED.
+
+     > Solution: We replaced the initial resistance with a stronger one and the intensity was adjusted.
+
+     
+
+## Distance sensor testing
+
+
+
+​	We performed the fourth test to decide if the distance sensor works properly, ie if it approximates well the distance from it to the first object in front of it.
+
+#### 	Following the tests performed, we found that the sensor works properly.
+
+
+
+## EEPROM (Arduino external memory) testing
+
+​	We performed the fifth test to determine if the best 3 scores are stored correctly in the external memory of the arduino uno board.
+​	This means that if the game is stopped (with and without power) the 3 scores will be stored and will be displayed when the game starts again, without differences from the initial information.
+​	To test this external memory, EEPROM, we have to play long enough to achieve the 3 best scores. After we have these 3 scores, we can close the game and turn it on again, entering the High Score option in the menu to see if the 3 scores have remained the same as before.
+
+####		After performing the test we found that this feature works correctly (can be seen in the video presentation of the game).
+
+
+
+
+Bug reporting:
+
+* Navigation arrow: remained on the screen next to the last option when we switched to a new menu option, duplicating.
+
+  > Solution: each time we switched to a new option, we delete the text from all the boxes where the arrow can be found and display it again in the box corresponding to the current option.
+
+ * Joystick sensitivity: while wanting to select a menu option, due to inaccurate perimeter and sensitivities other options were selected. 
+
+   > Solution: We reduced the perimeter of movement in the joystick, making it more precise     
+
+ * Navigation arrow: when entering an option, the navigation arrow remains in place.
+
+   > Solution: we have used the function to delete the text from each position where the arrow can be found when we enter a new option.
+
+
+
