@@ -60,7 +60,7 @@
 
 ​ The player has 20 seconds to finish the level.
 
-### Levels
+### Levels ###
 
 ​	There are 3 levels, and each level has 5 more bombs than the previous one.
 
