@@ -4,7 +4,7 @@
 #### Description: The game involves memorising the placement of some bombs that are shown to the user at the beginning of a level and then controlling the avatar whilst avoiding the hidden bombs.
 
 # Table of Contents
-  * ##   [Introduction](#introduction)
+  * ##   [Introduction](#introduction-)
   * ##   [ User interface](#user-interface)
     * ### [Levels](#levels-1)
     * ### [Feedback](#feedback-1)
