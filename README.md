@@ -6,7 +6,7 @@
 # Table of Contents
   * ##   [Introduction](#introduction)
   * ##   [ User interface](#user-interface)
-    * ### [Levels](###levels)
+    * ### [Levels](#levels-1)
     * ### Feedback
     * ### RGB LED
     * ### Score
