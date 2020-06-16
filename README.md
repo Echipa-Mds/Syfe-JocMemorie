@@ -15,14 +15,14 @@
   * ## [User Stories](#user-stories)
   * ## [ Design & Architecture](#design--architecture)
   * ## [Testing](#testing)
-    * ### [ LCD Display](#lcd-display-1)
-    * ### [ Matrix](#matrix-testing-1)
-    * ### [ RGB LED Check](#rgb-led-check-1)
-    * ### [ Distance sensor](#distance-sensor-1)
-    * ### [ EEPROM](#eeprom-1)
-  * ## [Bug Reporting](#bug-reporting)
-  * ## [Team](#team)
-  * ## [License](#license)
+    * ### [ LCD Display](#lcd-display)
+    * ### [ Matrix](#matrix-testing)
+    * ### [ RGB LED Check](#rgb-led-check)
+    * ### [ Distance sensor](#distance-sensor)
+    * ### [ EEPROM](#eeprom)
+  * ## [ Bug Reporting](#bug-reporting)
+  * ## [ Team](#team)
+  * ## [ License](#license)
   
  
 
