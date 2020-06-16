@@ -4,7 +4,7 @@
 #### Description: The game involves memorising the placement of some bombs that are shown to the user at the beginning of a level and then controlling the avatar whilst avoiding the hidden bombs.
 
 # Table of Contents
-  * ##   [Introduction](#introduction)
+  * ##   [Introduction](#introduction-1)
   * ##   [ User interface](#user-interface)
     * ### [Levels](#levels-1)
     * ### [Feedback](#feedback-1)
@@ -15,11 +15,11 @@
   * ## [User Stories](#user-stories)
   * ## [ Design & Architecture](#design--architecture)
   * ## [Testing](#testing)
-    * ### [LCD Display](#lcd-display-1)
-    * ### [Matrix](#matrix-testing-1)
-    * ### [RGB LED Check](#rgb-led-check-1)
-    * ### [Distance sensor](#distance-sensor-1)
-    * ### [EEPROM](#eeprom-1)
+    * ### [ LCD Display](#lcd-display-1)
+    * ### [ Matrix](#matrix-testing-1)
+    * ### [ RGB LED Check](#rgb-led-check-1)
+    * ### [ Distance sensor](#distance-sensor-1)
+    * ### [ EEPROM](#eeprom-1)
   * ## [Bug Reporting](#bug-reporting)
   * ## [Team](#team)
   * ## [License](#license)
