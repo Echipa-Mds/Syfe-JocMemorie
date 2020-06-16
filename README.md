@@ -31,20 +31,20 @@
 
 # Introduction :
 
-​	The application is intended to be used with an Arduino board and was specifically tested with an Arduino Uno Board. It is a simple game that utilizes multiple functions of the board and, therefore, tests if they are fully functional. The scratch application was built using the Arduino IDE and fully passes the verifications needed.  The data obtained from building the application is as follows: ![Compiling](https://user-images.githubusercontent.com/62382833/84721862-5551e700-af8a-11ea-9a20-683d4bbad004.png)
+The application is intended to be used with an Arduino board and was specifically tested with an Arduino Uno Board. It is a simple game that utilizes multiple functions of the board and, therefore, tests if they are fully functional. The scratch application was built using the Arduino IDE and fully passes the verifications needed.  The data obtained from building the application is as follows: ![Compiling](https://user-images.githubusercontent.com/62382833/84721862-5551e700-af8a-11ea-9a20-683d4bbad004.png)
 
 
-​	As it can be seen, the sketch compiles, although memory optimisation could be improved, and will be something we will be looking into in the near future.
+As it can be seen, the sketch compiles, although memory optimisation could be improved, and will be something we will be looking into in the near future.
 
 # User interface: #
 
-​The structure of the interface is as follows:
+The structure of the interface is as follows:
 
 ![f5f051e1-0580-43d2-890f-5c34ea8aa0cd](https://user-images.githubusercontent.com/62382833/82090876-0bfa4780-96ff-11ea-8691-048855d14597.jpg)
 
-​	In the first 2 seconds, a welcome message will be displayed on the LCD display and after that a menu will be shown.
+In the first 2 seconds, a welcome message will be displayed on the LCD display and after that a menu will be shown.
 
-​	The Menu (you can go through the menu using the joystick. There will be a cursor in the shape of ">" in front of several menu options: 
+The Menu (you can go through the menu using the joystick. There will be a cursor in the shape of ">" in front of several menu options: 
 
   * Play (while playing, the LCD will display the score, time, level and lives) 
 	
@@ -53,16 +53,15 @@
 * Settings (where you can set the level for the game and leave feedback) 
 
 
-​	Before the game, a map with bombs will be randomly chosen. In the first 5 seconds, bombs will be displayed on the screen for 5 seconds, time in which the player cannot move. The player must remember their location because they disapper after 5 seconds.
+Before the game, a map with bombs will be randomly chosen. In the first 5 seconds, bombs will be displayed on the screen for 5 seconds, time in which the player cannot move. The player must remember their location because they disapper after 5 seconds.
 
+Then, the player will be placed in the upper left corner and you will have to reach the opposite corner without hitting too many bombs. As the player advances, the number of bombs increases as well. If you hit a bomb, you will lose 5 points from your score but you will be shown the location of the bombs for 3 seconds on the display as a means of making the game less challenging.
 
-​	Then, the player will be placed in the upper left corner and you will have to reach the opposite corner without hitting too many bombs. As the player advances, the number of bombs increases as well. If you hit a bomb, you will lose 5 points from your score but you will be shown the location of the bombs for 3 seconds on the display as a means of making the game less challenging.
-
-​ The player has 20 seconds to finish the level.
+The player has 20 seconds to finish the level.
 
 ### Levels ###
 
-​	There are 3 levels, and each level has 5 more bombs than the previous one.
+There are 3 levels, and each level has 5 more bombs than the previous one.
 
   - level 1: 10 bombs
 
@@ -74,7 +73,7 @@
 
 ### Feedback:
 
-​	In the settings menu you can give a feedback to the game on a scale from 1 to 5.
+In the settings menu you can give a feedback to the game on a scale from 1 to 5.
 ### RGB LED:
 
 * If you are one step away from a bomb, the LED becomes red
@@ -93,7 +92,7 @@ Detects your distance and turns of the red/green option if you are too close to 
 high score for each level will be stored in EEPROM
 ### End of game:
 
-​	At the end of the game, the player will be greeted with a <strong> "Congratulations" </strong> message and a <strong> "You made a new high score"</strong>   if the player has gotten more points than his previous highscore. After that, the final score and number of seconds he spent will be displayed on top of the LCD. At the bottom there will be a Play Again button and a Menu with the ">" cursor.
+At the end of the game, the player will be greeted with a <strong> "Congratulations" </strong> message and a <strong> "You made a new high score"</strong>   if the player has gotten more points than his previous highscore. After that, the final score and number of seconds he spent will be displayed on top of the LCD. At the bottom there will be a Play Again button and a Menu with the ">" cursor.
 
 ### DEMO
 
@@ -110,7 +109,7 @@ high score for each level will be stored in EEPROM
 | #    | Comments                                                     | Notes                                                        | Priority                             | Status                         |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------ | ------------------------------ |
 | 1    | I would like to see my highest score.                        | Highscores should be saved and and should remain even after the device is restarted. | Required                             | Done                           |
-| 2    | I want to play multiplayer with other people and see who finishes fasterwhen we rush to the end point. | A multiplayer mode would be require player interaction. In the current iteration competition is achieved through comparing each player scores in different gaming sessions and mesured through highscore. | Unnecessary                          | Cancelled                      |
+| 2    | I want to play multiplayer with other people and see who finishes faster when we rush to the end point. | A multiplayer mode would be require player interaction. In the current iteration competition is achieved through comparing each player scores in different gaming sessions and mesured through highscore. | Unnecessary                          | Cancelled                      |
 | 3    | I have played with the game for quite a bit and the proximity light is too bright. Can it be toned down ? | On the initial game, lenght expose to the bright light led to reduced player satisfaction.We have installed a distance sensor that turns on the led only when the player is at a reasonable distance from the game. | Optional                             | Done                           |
 | 4    | The circuitry is exposed and can be easily messed up.        | We have built a casing that houses the hardware.             | Highly recommended(but not required) | Done                           |
 | 5    | The game is too easy and boring..                            | We have added 2  more levels each with increased number of bombs. | Recommended                          | Done                           |
@@ -131,11 +130,11 @@ high score for each level will be stored in EEPROM
 
 ![Design](https://user-images.githubusercontent.com/62382833/84704184-1ad45400-af62-11ea-8597-5a7863ee5c4a.png)
 
-​	Model - The software component which represents the conceptual assets the application offers, such as a database. For this project, we used EEPROM, a portion inside the arduino board that saves data even when it is turned off.
+Model - The software component which represents the conceptual assets the application offers, such as a database. For this project, we used EEPROM, a portion inside the arduino board that saves data even when it is turned off.
 
-​	● View - Creates the interface the user sees, with respect to the actions sent by the controller or directly interrogating the models. The final information will be displayed on the LCD display as text.
+● View - Creates the interface the user sees, with respect to the actions sent by the controller or directly interrogating the models. The final information will be displayed on the LCD display as text.
 
-​	● Controller - Logical component of the application, that intercepts the user's requests, interrogates the data base using the model, constructs an answer using the view and then returns to the client as a text on the LCD Display. The joystick will be the controller.
+● Controller - Logical component of the application, that intercepts the user's requests, interrogates the data base using the model, constructs an answer using the view and then returns to the client as a text on the LCD Display. The joystick will be the controller.
 
 
 
@@ -145,7 +144,7 @@ high score for each level will be stored in EEPROM
 
 ## LCD Display
 
-​	The first test we took care of is checking the LCD screen. The reason it represented a priority is because without it, all the other functions become unusable.
+The first test we took care of is checking the LCD screen. The reason it represented a priority is because without it, all the other functions become unusable.
 
 
 #### 	The test consists of checking if:	  
