@@ -15,11 +15,11 @@
   * ## [User Stories](#user-stories)
   * ## [ Design & Architecture](#design--architecture)
   * ## [Testing](#testing)
-    * ### [ LCD Display](#lcd-display)
-    * ### [ Matrix](#matrix-testing)
-    * ### [ RGB LED Check](#rgb-led-check)
-    * ### [ Distance sensor](#distance-sensor)
-    * ### [ EEPROM](#eeprom)
+    * ### [ LCD Display](#lcd-display-1)
+    * ### [ Matrix](#matrix-1)
+    * ### [ RGB LED Check](#rgb-led-check-1)
+    * ### [ Distance sensor](#distance-sensor-1)
+    * ### [ EEPROM](#eeprom-arduino-external-memory-1)
   * ## [ Bug Reporting](#bug-reporting)
   * ## [ Team](#team)
   * ## [ License](#license)
@@ -143,7 +143,7 @@ high score for each level will be stored in EEPROM
 
 
 
-## LCD Display Testing
+## LCD Display
 
 ​	The first test we took care of is checking the LCD screen. The reason it represented a priority is because without it, all the other functions become unusable.
 
@@ -172,7 +172,7 @@ high score for each level will be stored in EEPROM
 
 
 
-## Matrix testing
+## Matrix
 
   The second test we did was for the 8x8 matrix on which the game is displayed 
 
@@ -225,7 +225,7 @@ high score for each level will be stored in EEPROM
 
      
 
-## Distance sensor testing
+## Distance Sensor
 
 
 
@@ -235,7 +235,7 @@ high score for each level will be stored in EEPROM
 
 
 
-## EEPROM (Arduino external memory) testing
+## EEPROM (Arduino external memory)
 
   We performed the fifth test to determine if the best 3 scores are stored correctly in the external memory of the arduino uno board.
   This means that if the game is stopped (with and without power) the 3 scores will be stored and will be displayed when the game starts again, without differences from the initial information.
