@@ -6,20 +6,20 @@
 # Table of Contents
   * ##   [Introduction](#introduction)
   * ##   [ User interface](#user-interface)
-    * ### [Levels](#levels)
-    * ### [Feedback](#feedback)
-    * ### [RGB LED](#rgb-led)
-    * ### [Score](#score)
-    * ### [End of game](#end-of-game)
-    * ### [Demo](#demo)
+    * ### Levels
+    * ### Feedback
+    * ### RGB LED
+    * ### Score
+    * ### End of game
+    * ### Demo
   * ## [User Stories](#user-stories)
   * ## [ Design & Architecture](#design--architecture)
   * ## [Testing](#testing)
-    * ### [LCD Display](#lcd-display)
-    * ### [Matrix](#matrix)
-    * ### [RGB LED Check](rgb-led-check)
-    * ### [Distance sensor](#distance-sensor)
-    * ### [EEPROM](#eeprom) 
+    * ### LCD Display
+    * ### Matrix
+    * ### RGB LED Check
+    * ### Distance sensor
+    * ### EEPROM
   * ## [Bug Reporting](#bug-reporting)
   * ## [Team](#team)
   * ## [License](#license)
