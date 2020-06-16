@@ -29,14 +29,14 @@
 
 
 
-# Introduction :
+# Introduction
 
 The application is intended to be used with an Arduino board and was specifically tested with an Arduino Uno Board. It is a simple game that utilizes multiple functions of the board and, therefore, tests if they are fully functional. The scratch application was built using the Arduino IDE and fully passes the verifications needed.  The data obtained from building the application is as follows: ![Compiling](https://user-images.githubusercontent.com/62382833/84721862-5551e700-af8a-11ea-9a20-683d4bbad004.png)
 
 
 As it can be seen, the sketch compiles, although memory optimisation could be improved, and will be something we will be looking into in the near future.
 
-# User interface: #
+# User interface #
 
 The structure of the interface is as follows:
 
@@ -71,10 +71,10 @@ There are 3 levels, and each level has 5 more bombs than the previous one.
 
   The level can be set from the settings menu.
 
-### Feedback:
+### Feedback
 
 In the settings menu you can give a feedback to the game on a scale from 1 to 5.
-### RGB LED:
+### RGB LED
 
 * If you are one step away from a bomb, the LED becomes red
 * If you are two or more steps away from a bomb, the LED becomes green
@@ -82,7 +82,7 @@ In the settings menu you can give a feedback to the game on a scale from 1 to 5.
 
 Detects your distance and turns of the red/green option if you are too close to the screen.
 
-### Score:
+### Score
 
 * In order to make a high score, you must go through as many boxes and as few bombs as possible until you reach the bottom right corner. You will receive a point on each box
 * Score is obtained by going through as many boxes but as few bombs as possible until you reach the bottom right corner. The player will receive a point for each box.
@@ -90,7 +90,7 @@ Detects your distance and turns of the red/green option if you are too close to 
 * If you step on a bomb, you will lose 5 points. If your score is less than 5, the score becomes 0.
 * At the end of te game, the remaining seconds will be transformed into points(each second representing one additional point)
 high score for each level will be stored in EEPROM
-### End of game:
+### End of game
 
 At the end of the game, the player will be greeted with a <strong> "Congratulations" </strong> message and a <strong> "You made a new high score"</strong>   if the player has gotten more points than his previous highscore. After that, the final score and number of seconds he spent will be displayed on top of the LCD. At the bottom there will be a Play Again button and a Menu with the ">" cursor.
 
@@ -175,7 +175,7 @@ The first test we took care of is checking the LCD screen. The reason it represe
 
   The second test we did was for the 8x8 matrix on which the game is displayed 
 
-#### 	The test consists of checking if :
+#### 	The test consists of checking if:
 
 * All pixels work
 
@@ -186,7 +186,7 @@ The first test we took care of is checking the LCD screen. The reason it represe
   
 
 
-####  Following the tests we found :
+####  Following the tests we found:
 
  * Sometimes some of the pixels would not work, making the game impossible to play. The problem was due to the connection of the matrix with the breadboard and the resistors.
 
@@ -244,8 +244,7 @@ The first test we took care of is checking the LCD screen. The reason it represe
 
 
 
-
-## Bug reporting:
+## Bug reporting
 
 * Navigation arrow: remained on the screen next to the last option when we switched to a new menu option, duplicating.
 
